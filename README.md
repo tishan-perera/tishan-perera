@@ -3,8 +3,8 @@
 - 🌱 I’m currently learning Data Analytics
 - 💞️ I’m looking to collaborate on 
 - 📫 How to reach me https://www.linkedin.com/in/tishan-perera/
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
+- 😄 Pronouns: He/Him
+- ⚡ Fun fact: I like creating short form content
 
 <!---
 tishan-perera/tishan-perera is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
