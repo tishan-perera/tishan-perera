@@ -16,7 +16,7 @@ I'm interested in FP&A and AI in finance. I build workflows where AI does the le
 | Result | What it means |
 |---|---|
 | **4 open-source demos** | [close-recon-assistant](https://github.com/tishan-perera/close-recon-assistant), [fpa-driver-model](https://github.com/tishan-perera/fpa-driver-model), [personal-ai-os-demo](https://github.com/tishan-perera/personal-ai-os-demo), and [poc.mcp-finance-tools](https://github.com/tishan-perera/poc.mcp-finance-tools). |
-| **No API key** | All four run without an API key. |
+| **No API key** | All four run without an API key. Each README's default command asks for none. |
 
 <!-- TODO: verify -->
 <!-- TODO: verify: education, certifications, talks, and any quantified result. -->
@@ -41,33 +41,33 @@ The four demos use synthetic or fictional data.
 
 ### Featured: [close-recon-assistant](https://github.com/tishan-perera/close-recon-assistant)
 
-<a href="https://github.com/tishan-perera/close-recon-assistant"><img src="assets/close-recon.png" alt="Preview card for close-recon-assistant. AI drafts a reconciliation and a person approves the numbers." width="60%" align="right"></a>
+<a href="https://github.com/tishan-perera/close-recon-assistant"><img src="assets/close-recon.png" alt="Terminal output of python3 -m close_recon for fictional Sample Harbor LLC, March 2026. The data origin is synthetic, the review queue is still pending, and no journal entries are posted." width="60%" align="right"></a>
 
-**AI drafts month-end reconciliations, and a person approves the numbers.** Synthetic demo data.
+**Drafts a month-end cash reconciliation for one fictional operating account. A person approves or rejects the open rows. Nothing is posted.**
 
-- Runs without an API key
-- A person approves the numbers before they are final
+Sample Harbor LLC is fictional. One cash account, March 2026. `python3 -m close_recon` needs no API key and does not use the network.
 
-<!-- TODO: verify: swap assets/close-recon.png for a real screenshot, and replace these lines with the steps the demo actually runs, once that repo merges. -->
+- Loads the GL cash lines and the bank statement, matches them, and flags exceptions
+- The rules engine writes a reason and a confidence for every match, exception, and expense category, then stops
+- A decision file records approve or reject. Approved rows stay `approved_not_posted`
+- The sample run posts no journal entries. An optional in-process model stays off unless Python code turns it on, and this repo has no API key
 
 <br clear="right">
 
 <table>
 <tr>
-<td width="33%" valign="top"><a href="https://github.com/tishan-perera/fpa-driver-model"><img src="assets/fpa-driver.png" alt="Preview card for fpa-driver-model: driver, forecast, and review." width="100%"></a><br><b><a href="https://github.com/tishan-perera/fpa-driver-model">fpa-driver-model</a></b><br>Driver-based FP&amp;A forecast and variance model with AI commentary and human review. Synthetic demo data.</td>
-<td width="33%" valign="top"><a href="https://github.com/tishan-perera/personal-ai-os-demo"><img src="assets/personal-ai-os.png" alt="Preview card for personal-ai-os-demo: a lead agent, departments, and an owner approval gate." width="100%"></a><br><b><a href="https://github.com/tishan-perera/personal-ai-os-demo">personal-ai-os-demo</a></b><br>A personal AI team with a lead agent, departments, and owner approval gates. Fictional seats and demo data.</td>
-<td width="33%" valign="top"><a href="https://github.com/tishan-perera/poc.mcp-finance-tools"><img src="assets/mcp-finance.png" alt="Preview card for poc.mcp-finance-tools: read-only GL, reconciliations, and variance." width="100%"></a><br><b><a href="https://github.com/tishan-perera/poc.mcp-finance-tools">poc.mcp-finance-tools</a></b><br>Read-only MCP server with finance tools (GL, reconciliations, variance) over synthetic data.</td>
+<td width="33%" valign="top"><a href="https://github.com/tishan-perera/fpa-driver-model"><img src="assets/fpa-driver.png" alt="FY 2025 revenue bridge and monthly budget versus actual for fictional Fairhaven Metrics LLC, drawn by fpa-model chart. The chart is labeled synthetic." width="100%"></a><br><b><a href="https://github.com/tishan-perera/fpa-driver-model">fpa-driver-model</a></b><br>A driver-based FP&amp;A model for fictional Fairhaven Metrics LLC. It rolls a 2026 forecast from monthly drivers, compares 2025 actuals with the original budget, and holds the variance write-up until an analyst approves it. No API key.</td>
+<td width="33%" valign="top"><a href="https://github.com/tishan-perera/personal-ai-os-demo"><img src="assets/personal-ai-os.png" alt="Atrium, a fictional personal AI team, with a drafted reply waiting in the approval queue. Nothing is sent until the owner approves." width="100%"></a><br><b><a href="https://github.com/tishan-perera/personal-ai-os-demo">personal-ai-os-demo</a></b><br>Atrium routes a fictional personal AI team through a chief of staff. Departments propose, and sending, paying, publishing, or submitting waits until the owner approves. The default demo needs no API key.</td>
+<td width="33%" valign="top"><a href="https://github.com/tishan-perera/poc.mcp-finance-tools"><img src="assets/mcp-finance.png" alt="September 2026 trial balance for fictional Halden and Quay Supply, shown in balance. The page says the books are synthetic and read-only." width="100%"></a><br><b><a href="https://github.com/tishan-perera/poc.mcp-finance-tools">poc.mcp-finance-tools</a></b><br>Read-only MCP tools for fictional Halden &amp; Quay Supply: trial balance, open reconciliations, budget variance, and aging. A draft adjusting entry comes back unposted. No API key, and the server never writes the ledger.</td>
 </tr>
 </table>
 
-<!-- TODO: verify: swap assets/fpa-driver.png, assets/personal-ai-os.png, and assets/mcp-finance.png for real screenshots once those repos merge. -->
-
 ## 🔭 What I do
 
-* **Close reconciliations.** AI drafts the month-end reconciliation, and a person approves the numbers. Synthetic data, in [close-recon-assistant](https://github.com/tishan-perera/close-recon-assistant).
-* **FP&A.** A driver-based forecast and variance model, with AI commentary and human review. Synthetic data, in [fpa-driver-model](https://github.com/tishan-perera/fpa-driver-model).
-* **Read-only finance tools.** An MCP server for GL, reconciliations, and variance, over synthetic data, in [poc.mcp-finance-tools](https://github.com/tishan-perera/poc.mcp-finance-tools).
-* **A personal AI team.** A lead agent, departments, and owner approval gates, on fictional seats and demo data, in [personal-ai-os-demo](https://github.com/tishan-perera/personal-ai-os-demo).
+* **Close reconciliations.** A rules engine drafts the cash bridge and the exception notes, a person approves or rejects the open rows, and nothing is posted. Synthetic data, in [close-recon-assistant](https://github.com/tishan-perera/close-recon-assistant).
+* **FP&A.** A driver forecast and an actual-versus-budget variance for a fictional company. The write-up stays off until an analyst approves that draft. In [fpa-driver-model](https://github.com/tishan-perera/fpa-driver-model).
+* **Read-only finance tools.** An MCP server for trial balance, reconciliations, variance, and aging. A draft adjusting entry is returned unposted. In [poc.mcp-finance-tools](https://github.com/tishan-perera/poc.mcp-finance-tools).
+* **A personal AI team.** A chief of staff routes department proposals, and the owner approves anything consequential. Fictional seats, in [personal-ai-os-demo](https://github.com/tishan-perera/personal-ai-os-demo).
 
 <!-- TODO: verify -->
 <!-- TODO: verify: day-to-day scope of the Kane Kessler finance analyst role. -->
