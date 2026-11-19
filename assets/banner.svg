@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="360" viewBox="0 0 1280 360" role="img" aria-labelledby="bannerTitle bannerDesc">
+  <title id="bannerTitle">Tishan Perera, finance analyst</title>
+  <desc id="bannerDesc">AI does the close work, people make the call. New York, Denver, and remote.</desc>
+  <rect width="1280" height="360" fill="#0E1C2F"/>
+  <rect width="1280" height="8" fill="#6B4A32"/>
+  <rect y="8" width="1280" height="2" fill="#C6A36A"/>
+  <rect y="352" width="1280" height="8" fill="#6B4A32"/>
+  <text x="72" y="118" fill="#C6A36A" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="15" font-weight="600" letter-spacing="3.4">FINANCE ANALYST</text>
+  <text x="72" y="186" fill="#F7F3EC" font-family="Georgia, 'Iowan Old Style', 'Palatino Linotype', Palatino, 'Times New Roman', serif" font-size="64">Tishan Perera</text>
+  <rect x="72" y="210" width="148" height="2" fill="#B88460"/>
+  <text x="72" y="262" fill="#F7F3EC" font-family="Georgia, 'Iowan Old Style', 'Palatino Linotype', Palatino, 'Times New Roman', serif" font-size="28">AI does the close work, people make the call.</text>
+  <text x="72" y="312" fill="#D5C7B4" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="18">New York · Denver · remote</text>
+  <g transform="translate(968,108)" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" font-weight="600" letter-spacing="3.2">
+    <text fill="#B88460">DRAFT</text>
+    <rect y="16" width="200" height="1" fill="#7A92AA"/>
+    <text y="52" fill="#C6A36A">REVIEW</text>
+    <rect y="68" width="148" height="1" fill="#7A92AA"/>
+    <text y="104" fill="#F7F3EC">APPROVE</text>
+    <rect y="120" width="92" height="1" fill="#C6A36A"/>
+  </g>
+</svg>
