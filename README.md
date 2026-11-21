@@ -33,6 +33,8 @@ Stack: Python, FastAPI, Jinja2, HTMX, SQLite, SQLAlchemy, Pydantic, pytest, ruff
 
 ### [personal-ai-os](https://github.com/tishan-perera/personal-ai-os)
 
+<a href="https://github.com/tishan-perera/personal-ai-os"><img src="assets/personal-ai-os-hero.svg" alt="Personal AI OS. A multi-agent organization: a chief-of-staff agent, department seats, and owner approval gates. Case study · Sanitized, no private data." width="100%"></a>
+
 A public case study of a personal multi-agent organization: a chief-of-staff agent, department seats, and owner approval before a message is sent, a job is applied for, a hire is made, or a comparable action is taken. Sanitized (no private data). The runnable fictional companion is [personal-ai-os-demo](https://github.com/tishan-perera/personal-ai-os-demo) (Atrium).
 
 ### [close-recon-assistant](https://github.com/tishan-perera/close-recon-assistant)
