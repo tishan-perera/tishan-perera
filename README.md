@@ -1,81 +1,54 @@
-<img src="assets/banner.svg" alt="Tishan Perera, finance analyst. AI does the close work, people make the call." width="100%">
+<img src="assets/github-profile-banner.svg" alt="AI Automation Engineer. AI agents and workflows. LLM integrations. Human-in-the-loop by design. AI does the busywork. People make the call." width="100%">
 
 <p>
-<img src="https://img.shields.io/badge/Open_to-AI--enabled_FP%26A_%C2%B7_Finance_automation_%C2%B7_Financial_systems-6B4F3A?style=flat-square" alt="Open to: AI-enabled FP&amp;A · Finance automation · Financial systems">
-<img src="https://img.shields.io/badge/New_York_%C2%B7_Denver_%C2%B7_remote-1B3A4B?style=flat-square" alt="New York · Denver · remote">
+  <img src="https://img.shields.io/badge/Open_to-AI_Automation_Engineer-14B8A6?style=flat&labelColor=0B1F33" alt="Open to AI Automation Engineer">
+  <img src="https://img.shields.io/badge/Location-Remote_(US)_%2F_Hybrid_NYC_or_Denver-14B8A6?style=flat&labelColor=0B1F33" alt="Remote (US) / Hybrid NYC or Denver">
 </p>
 
-**AI does the close work, people make the call.**
+I build AI agents and workflows with a human in the loop. I'm an AI & Automation Engineer (contract, Oct 2026–present, remote) at Slicing Water. Previously I was Finance Analyst at Kane Kessler, P.C., from May 2023 to September 2026, and a volunteer tax preparer with the VITA program from January to April 2023.
 
-I'm a finance analyst in New York, relocating, and open to Denver and remote work. I was Finance Analyst at Kane Kessler, P.C. from May 2023 to November 2026, and a volunteer tax preparer with VITA (Volunteer Income Tax Assistance) from January to April 2023.
+I'm open to AI Automation Engineer roles — remote in the US, or hybrid in New York City or Denver. U.S. permanent resident, no sponsorship needed.
 
-I'm interested in FP&A and AI in finance. I build workflows where AI does the legwork and a person approves the numbers.
+## How I build
 
-## ⚡ Highlights
+Work arrives, an automated pass prepares it, a person approves or rejects, and only then is it done.
 
-| Result | What it means |
-|---|---|
-| **4 open-source demos** | [close-recon-assistant](https://github.com/tishan-perera/close-recon-assistant), [fpa-driver-model](https://github.com/tishan-perera/fpa-driver-model), [personal-ai-os-demo](https://github.com/tishan-perera/personal-ai-os-demo), and [poc.mcp-finance-tools](https://github.com/tishan-perera/poc.mcp-finance-tools). |
-| **No API key** | All four run without an API key. Each README's default command asks for none. |
+<img src="assets/flow.svg" alt="Input, AI, Approval, Done" width="640">
 
-<!-- TODO: verify -->
-<!-- TODO: verify: education, certifications, talks, and any quantified result. -->
-<!-- TODO: verify: systems and tools used in the finance analyst role. -->
+The project demos below use synthetic or fictional data. [personal-ai-os](https://github.com/tishan-perera/personal-ai-os) is a sanitized case study of a personal org, not a synthetic demo.
 
-## 🧭 How I build
+## Projects
 
-AI prepares the work. A person approves the numbers. A yes is what makes the work final.
+### Featured: [ap-automation-agent](https://github.com/tishan-perera/ap-automation-agent)
 
-```mermaid
-flowchart LR
-  Q["Close or<br/>forecast request"] --> A["AI does<br/>the legwork"]
-  A --> D["A draft is ready<br/>for review"]
-  D --> P{"Person<br/>approves?"}
-  P -- yes --> S["The work<br/>is final"]
-  P -- no --> N["Stays a draft"]
-```
+<a href="https://github.com/tishan-perera/ap-automation-agent"><img src="https://raw.githubusercontent.com/tishan-perera/ap-automation-agent/main/docs/ap-repo-hero.svg" alt="AP Automation Agent. AI reads invoices, checks them against POs and receipts, and a person approves before export. Synthetic data only." width="100%"></a>
 
-The four demos use synthetic or fictional data.
+**An AI-assisted accounts payable web app. It extracts and checks invoices, then a person approves, rejects, or edits every one. Synthetic data only.**
 
-## 🧰 Projects
+The model never invents a missing amount: an unreadable or absent total is stored as null, flagged, and sent to review. After extraction, validation, duplicate checks, 2-way and 3-way matching (tolerance: the greater of $1.00 or 1% of the PO total), and suggested GL coding are plain, tested Python. Nothing is exported until a person approves it, and every action goes to an audit log. Approved invoices can be downloaded as a QuickBooks-style CSV.
 
-### Featured: [close-recon-assistant](https://github.com/tishan-perera/close-recon-assistant)
+Default run uses an offline mock provider — no API key, no network. Swappable Gemini, Claude, and OpenAI providers are implemented but have not been run against live APIs. 118 tests, all on the mock; CI runs ruff and pytest on every push and pull request. A mock eval on 24 synthetic invoices is documented in the repo with this caveat: it is not a measure of real LLM accuracy.
 
-<a href="https://github.com/tishan-perera/close-recon-assistant"><img src="assets/close-recon.png" alt="Terminal output of python3 -m close_recon for fictional Sample Harbor LLC, March 2026. The data origin is synthetic, the review queue is still pending, and no journal entries are posted." width="60%" align="right"></a>
+Stack: Python, FastAPI, Jinja2, HTMX, SQLite, SQLAlchemy, Pydantic, pytest, ruff, Docker Compose. Personal project, November 2026. MIT.
 
-**Drafts a month-end cash reconciliation for one fictional operating account. A person approves or rejects the open rows. Nothing is posted.**
+### [personal-ai-os](https://github.com/tishan-perera/personal-ai-os)
 
-Sample Harbor LLC is fictional. One cash account, March 2026. `python3 -m close_recon` needs no API key and does not use the network.
+A public case study of a personal multi-agent organization: a chief-of-staff agent, department seats, and owner approval before a message is sent, a job is applied for, a hire is made, or a comparable action is taken. Sanitized (no private data). The runnable fictional companion is [personal-ai-os-demo](https://github.com/tishan-perera/personal-ai-os-demo) (Atrium).
 
-- Loads the GL cash lines and the bank statement, matches them, and flags exceptions
-- The rules engine writes a reason and a confidence for every match, exception, and expense category, then stops
-- A decision file records approve or reject. Approved rows stay `approved_not_posted`
-- The sample run posts no journal entries. An optional in-process model stays off unless Python code turns it on, and this repo has no API key
+### [close-recon-assistant](https://github.com/tishan-perera/close-recon-assistant)
 
-<br clear="right">
+An assistant that drafts a month-end cash reconciliation for one fictional operating account. A person approves or rejects the open rows; approved rows stay `approved_not_posted`; nothing is posted. Rules engine, synthetic Sample Harbor LLC data, default run with no API key and no network.
 
-<table>
-<tr>
-<td width="33%" valign="top"><a href="https://github.com/tishan-perera/fpa-driver-model"><img src="assets/fpa-driver.png" alt="FY 2025 revenue bridge and monthly budget versus actual for fictional Fairhaven Metrics LLC, drawn by fpa-model chart. The chart is labeled synthetic." width="100%"></a><br><b><a href="https://github.com/tishan-perera/fpa-driver-model">fpa-driver-model</a></b><br>A driver-based FP&amp;A model for fictional Fairhaven Metrics LLC. It rolls a 2026 forecast from monthly drivers, compares 2025 actuals with the original budget, and holds the variance write-up until an analyst approves it. No API key.</td>
-<td width="33%" valign="top"><a href="https://github.com/tishan-perera/personal-ai-os-demo"><img src="assets/personal-ai-os.png" alt="Atrium, a fictional personal AI team, with a drafted reply waiting in the approval queue. Nothing is sent until the owner approves." width="100%"></a><br><b><a href="https://github.com/tishan-perera/personal-ai-os-demo">personal-ai-os-demo</a></b><br>Atrium routes a fictional personal AI team through a chief of staff. Departments propose, and sending, paying, publishing, or submitting waits until the owner approves. The default demo needs no API key.</td>
-<td width="33%" valign="top"><a href="https://github.com/tishan-perera/poc.mcp-finance-tools"><img src="assets/mcp-finance.png" alt="September 2026 trial balance for fictional Halden and Quay Supply, shown in balance. The page says the books are synthetic and read-only." width="100%"></a><br><b><a href="https://github.com/tishan-perera/poc.mcp-finance-tools">poc.mcp-finance-tools</a></b><br>Read-only MCP tools for fictional Halden &amp; Quay Supply: trial balance, open reconciliations, budget variance, and aging. A draft adjusting entry comes back unposted. No API key, and the server never writes the ledger.</td>
-</tr>
-</table>
+### [poc.mcp-finance-tools](https://github.com/tishan-perera/poc.mcp-finance-tools)
 
-## 🔭 What I do
+Read-only MCP tools over synthetic books (trial balance, open reconciliations, budget variance, aging). A draft adjusting entry comes back unposted. The server never writes the ledger. No API key.
 
-* **Close reconciliations.** A rules engine drafts the cash bridge and the exception notes, a person approves or rejects the open rows, and nothing is posted. Synthetic data, in [close-recon-assistant](https://github.com/tishan-perera/close-recon-assistant).
-* **FP&A.** A driver forecast and an actual-versus-budget variance for a fictional company. The write-up stays off until an analyst approves that draft. In [fpa-driver-model](https://github.com/tishan-perera/fpa-driver-model).
-* **Read-only finance tools.** An MCP server for trial balance, reconciliations, variance, and aging. A draft adjusting entry is returned unposted. In [poc.mcp-finance-tools](https://github.com/tishan-perera/poc.mcp-finance-tools).
-* **A personal AI team.** A chief of staff routes department proposals, and the owner approves anything consequential. Fictional seats, in [personal-ai-os-demo](https://github.com/tishan-perera/personal-ai-os-demo).
+### [fpa-driver-model](https://github.com/tishan-perera/fpa-driver-model)
 
-<!-- TODO: verify -->
-<!-- TODO: verify: day-to-day scope of the Kane Kessler finance analyst role. -->
+A driver-based forecast and budget-versus-actual model for fictional Fairhaven Metrics LLC. The variance write-up is held until an analyst approves the draft. No API key.
 
-## 📫 Let's talk
+## Open to
 
-I'm open to roles in **AI-enabled FP&A**, **finance automation**, and **financial systems**. New York, Denver, or remote.
+I'm open to **AI Automation Engineer** roles — Remote (US) / Hybrid NYC or Denver.
 
-[LinkedIn](https://www.linkedin.com/in/tishan-perera/)
-
-<!-- TODO: verify: confirm https://www.linkedin.com/in/tishan-perera/ opens the right profile. -->
+[Portfolio](https://tishan-perera.github.io/) · [LinkedIn](https://www.linkedin.com/in/tishan-perera/) · [GitHub](https://github.com/tishan-perera)
